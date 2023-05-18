@@ -1,0 +1,142 @@
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(23, 24, 33);
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content:center ;
+    align-items: center;
+ gap: 35px;
+}
+.container .Selection{
+    font-size: 23px;
+    font-weight: 700;
+   font-family: sans-serif;
+   display: flex;
+   gap: 40px;
+   color: rgb(181, 179, 179);
+   text-transform: uppercase;
+}
+input[type="checkbox"]{
+    display: none;
+
+}
+input[type="checkbox"]:checked + label span{
+left: 80%;
+transform: rotate(30deg);
+}
+label{
+    width: 100px;
+    height: 25px;
+    border-radius: 20px;
+    background-color: rgb(246, 233, 160);
+  position: relative;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+label span{
+    position: absolute;
+    content: "";
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgb(7, 7, 100);
+  left: -5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 25px;
+  color: rgb(246, 233, 160);
+  transform: rotate(-30deg);
+  transition: 0.3s;
+}
+input[type="checkbox"]:checked + label+.box_forms{
+    transform: rotateY(180deg);
+}
+.box_forms{
+    width: 80vw;
+    max-width: 450px;
+    height: 400px;
+  position: relative;
+margin-top: 40px;
+transform-style: preserve-3d;
+perspective: 1500px;
+transition: 0.7s;
+background-color: rgb(30, 37, 50);
+background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/1462889/pat.svg');
+}
+
+.box_forms .log_in , .sgin_up{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    align-items: center;
+    flex-direction: column;
+   gap: 20px;
+   position: absolute;
+   transform: translateZ(75px);
+ transform-style: preserve-3d;
+ 
+}
+.box_forms div input::before{
+    position: absolute;
+    content: attr(data-txt);
+  color: gray;
+  
+}
+.sgin_up{
+ gap: 20px;
+    transform: rotateY(180deg) translateZ(75px);
+ 
+}
+.box_forms .log_in h1 , .sgin_up h1{
+    color: rgb(180, 180, 180);
+   font-family: sans-serif;
+
+}
+.box_forms .log_in .box_input,.sgin_up .box_input{
+    width: 80%;
+   display: flex;
+   flex-direction: column;
+   gap: 20px;
+}
+.sgin_up .box_input{
+    gap: 10px;
+}
+.box_forms .log_in .box_input div,.sgin_up .box_input div{
+height: 40px;
+    padding: 0.5em;
+background-color: rgb(28, 30, 41);
+display: flex;
+align-items: center;
+ font-size: 25px;
+ color: rgb(246, 233, 160);
+}
+.box_forms .log_in .box_input div input,.sgin_up .box_input div input{
+    border: none;
+    outline: none;
+  background-color: transparent;  
+   width: 95%; 
+   min-height: 100%; 
+   margin-left: 10px;  
+   font-size: 20px;
+   color: rgb(180, 180, 180);
+   
+}
+
+.box_forms .log_in  input[type="submit"],.sgin_up input[type="submit"]{
+  padding: .7em 1.5em;
+  border-radius: 5px;  
+  background-color: rgb(246, 233, 160);
+  box-shadow: 0px 0px 5px rgb(246, 233, 160);
+  border: none;
+  outline: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: rgb(0, 43, 103);
+}
